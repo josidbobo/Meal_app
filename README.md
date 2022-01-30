@@ -1,6 +1,6 @@
 # meals_info_hub
 
-A new Flutter project.
+A new Flutter project. 💃 🍷
 
 ## Getting Started
 
