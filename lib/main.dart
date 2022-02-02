@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:meals_info_hub/widgets/categories_meal_screen.dart';
+import 'package:meals_info_hub/screens/categories_meal_screen.dart';
 
-import './widgets/categories_screen.dart';
+import 'screens/categories_screen.dart';
 
 void main() {
   runApp(const MyApp());
@@ -36,7 +36,10 @@ class MyApp extends StatelessWidget {
       ),
       home: const CategoriesScreen(),
       routes: {
-        '/categories': (ctx) => CategoriesMealScreen(),
+        /* Another way of describing the page the home screen is located to be used after deleting the {home:} argument
+            '/': (ctx) => const CategoriesScreen(), 
+        */
+        CategoriesMealScreen.routeName: (ctx) => const CategoriesMealScreen(),
       },
     );
   }
