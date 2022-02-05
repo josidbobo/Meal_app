@@ -10,8 +10,8 @@ class CategoriesMealScreen extends StatelessWidget {
   Widget build(BuildContext context) {
     final routesArguments =
         ModalRoute.of(context)!.settings.arguments as Map<String, Object>;
-    final categoryId = routesArguments['id'].toString();
-    final categoryTitle = routesArguments['title'].toString();
+    final categoryId = routesArguments['id'] as String;
+    final categoryTitle = routesArguments['title'] as String;
     final categoryMeals = dummyMeals.where((meal) {
       return meal.categories.contains(categoryId);
     }).toList();
@@ -29,7 +29,8 @@ class CategoriesMealScreen extends StatelessWidget {
       body: ListView.builder(
           itemBuilder: (context, index) {
             return MealItem(
-              title: categoryMeals[index].title, 
+              id: categoryMeals[index].id,
+              title: categoryMeals[index].title,
               imageUrl: categoryMeals[index].imageUrl,
               duration: categoryMeals[index].duration, 
               complexity: categoryMeals[index].complexity, 
