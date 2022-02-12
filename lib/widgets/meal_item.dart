@@ -46,6 +46,7 @@ class MealItem extends StatelessWidget {
     }
   }
 
+  /* This function describes the route to the Detailed Screened page */
   void selectMeal(BuildContext context) {
     Navigator.of(context).pushNamed(MealDetailScreen.routeName, arguments: id);
   }
