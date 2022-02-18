@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import '../models/3.2 dummy_data.dart';
+import '../models/3.2_dummy_data.dart';
 import '../widgets/category_item.dart';
 
 class CategoriesScreen extends StatelessWidget {
@@ -7,18 +7,7 @@ class CategoriesScreen extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Scaffold(
-      appBar: AppBar(
-          leading: IconButton(
-            icon: const Icon(Icons.menu),
-            onPressed: () {},
-          ),
-          title: Text('Delicious Meals',
-              style: Theme.of(context)
-                  .textTheme
-                  .headline1
-                  ?.copyWith(fontSize: 31, fontFamily: 'Raleway-Bold.ttf'))),
-      body: GridView(
+    return GridView(
               padding: const EdgeInsets.all(8),
               gridDelegate: const SliverGridDelegateWithMaxCrossAxisExtent(
                 // width of the Grid.
@@ -34,7 +23,6 @@ class CategoriesScreen extends StatelessWidget {
                   .map((item) =>
                       CategoryItem(title: item.title, color: item.color, id: item.id,))
                   .toList(),
-            ),
     );
   }
 }
