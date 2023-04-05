@@ -1,6 +1,6 @@
 # meals_info_hub
 
-A new Flutter project. 💃 🍷
+A new Flutter mobile Application that has different meals that can be selected and their recipies. 💃 🍷
 
 ## Getting Started
 
