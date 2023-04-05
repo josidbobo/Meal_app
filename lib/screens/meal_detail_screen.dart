@@ -32,8 +32,8 @@ class MealDetailScreen extends StatelessWidget{
 
   @override
   Widget build(BuildContext context) {
-    final mealParams = ModalRoute.of(context)!.settings.arguments as String;
-    final selectedMeal = dummyMeals.firstWhere((meal) => meal.id == mealParams);
+    final mealId = ModalRoute.of(context)!.settings.arguments as String;
+    final selectedMeal = dummyMeals.firstWhere((meal) => meal.id == mealId);
 
     return Scaffold(
       appBar: AppBar(
@@ -83,8 +83,8 @@ class MealDetailScreen extends StatelessWidget{
                     ListTile(
                       leading: CircleAvatar(
                         backgroundColor: Theme.of(context).colorScheme.primary,
-                        child: Text('#${index + 1}', 
-                      ),),
+                          child: Text('#${index + 1}'),
+                          ), 
                       title: Text(selectedMeal.steps[index]),
                     ),
                     if(selectedMeal.steps.length - 1 != index)
@@ -94,9 +94,14 @@ class MealDetailScreen extends StatelessWidget{
                 itemCount: selectedMeal.steps.length, ),
                height: 250.0,
               ),
-            ],
+           ],
           ),
+      ), 
+      floatingActionButton: FloatingActionButton(
+        child: const Icon(Icons.delete),
+        onPressed: () {Navigator.of(context).pop(mealId);}
       ),
+      //floatingActionButtonLocation: FloatingActionButtonLocation.centerDocked,
     );
   }
 }
